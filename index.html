@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React-basic</title>
+</head>
+
+<body>
+  <!--
+        What is Emmet?
+        ->Emmet uses abbreviations and shortcuts to generate HTML code quickly
+           ex:html:5
+        Difference between a Library and Framework?
+        ->A library is like a collection of pre-written code modules or functions that can be reused in various projects.
+          ex:React
+        ->A framework provides a structured approach and sets of rules for developing applications.
+          ex:Next js
+        What is CDN? Why do we use it?
+        ->A CDN is content delivery network that allows the users to use the data from anywhere
+        ->We use CDN because Faster Content Delivery,Scalability,Improved Website Performance
+        Why is React known as React?
+        -> React, the popular JavaScript library for building user interfaces, is known as "React" because of its core concept of
+        reactive programming. The name "React" reflects the library's ability to efficiently update and render components in
+        response to changes in data or state.
+        What is crossorigin in the script tag?
+        ->The purpose of crossorigin attribute is used to share the resources from one domain to another domain.
+        What is the difference between React and ReactDOM?
+        ->React is which would import all the create element methods createElement()
+        ->while ReactDOM is a package within the React ecosystem specifically designed for interacting with the DOM
+        What is the difference between react.development.js and react.production.js files via CDN?
+        ->react.development.js is  nothing but the cdn which is used in the development phase 
+        ->react.production.js is nothing but the cdn which is used in the production phase and the code would be optimized
+        What is async and defer?
+        ->async and defer are attributes used in HTML
+        <script> tags to control when and how scripts are loaded and executed on a web page.
+
+    -->
+
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script>
+    // const headingElement = React.createElement("h1", { id: "heading" }, 'hello world');
+    // const headingElement2 = React.createElement("h1", { id: "heading" }, 'hello world');
+    // const divElement  = React.createElement("div" , {},headingElement,headingElement2);
+    
+    // const root = ReactDOM.createRoot(document.getElementById("2"));
+    
+    // root.render(divElement);
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    const nestedElement = React.createElement(
+        "div",{ id: "1" },
+        React.createElement("div", { id: "2" }, [
+          React.createElement("h1", { class: "heading" }, "Heading for Nested "),
+          React.createElement("h1", { class: "heading" }, "Heading for Nested "),
+        ])
+      );
+      root.render(nestedElement);
+  
+  </script>
+</body>
+
+</html>
